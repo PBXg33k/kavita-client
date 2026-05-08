@@ -2,7 +2,7 @@
 /**
  * ReadingListProvider
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * ReadingListProvider Class Doc Comment
@@ -38,24 +37,9 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReadingListProvider
+enum ReadingListProvider: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 0 = 0;
-    const 1 = 1;
-    const 2 = 2;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::0
-            self::1
-            self::2
-        ];
-    }
+    case None = 0;
+    case File = 1;
+    case Url = 2;
 }

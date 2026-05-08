@@ -2,7 +2,7 @@
 /**
  * CblRemapRuleKind
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * CblRemapRuleKind Class Doc Comment
@@ -38,24 +37,9 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CblRemapRuleKind
+enum CblRemapRuleKind: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 0 = 0;
-    const 1 = 1;
-    const 2 = 2;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::0
-            self::1
-            self::2
-        ];
-    }
+    case Series = 0;
+    case Volume = 1;
+    case Chapter = 2;
 }

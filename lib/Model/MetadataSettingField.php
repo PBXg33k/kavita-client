@@ -2,7 +2,7 @@
 /**
  * MetadataSettingField
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * MetadataSettingField Class Doc Comment
@@ -38,46 +37,20 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MetadataSettingField
+enum MetadataSettingField: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    const 4 = 4;
-    const 5 = 5;
-    const 6 = 6;
-    const 7 = 7;
-    const 8 = 8;
-    const 9 = 9;
-    const 10 = 10;
-    const 11 = 11;
-    const 12 = 12;
-    const 13 = 13;
-    const 14 = 14;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::1
-            self::2
-            self::3
-            self::4
-            self::5
-            self::6
-            self::7
-            self::8
-            self::9
-            self::10
-            self::11
-            self::12
-            self::13
-            self::14
-        ];
-    }
+    case Summary = 1;
+    case PublicationStatus = 2;
+    case StartDate = 3;
+    case Genres = 4;
+    case Tags = 5;
+    case LocalizedName = 6;
+    case Covers = 7;
+    case AgeRating = 8;
+    case People = 9;
+    case ChapterTitle = 10;
+    case ChapterSummary = 11;
+    case ChapterReleaseDate = 12;
+    case ChapterPublisher = 13;
+    case ChapterCovers = 14;
 }

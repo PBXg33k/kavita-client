@@ -2,7 +2,7 @@
 /**
  * CblMatchTier
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * CblMatchTier Class Doc Comment
@@ -38,36 +37,15 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CblMatchTier
+enum CblMatchTier: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 0 = 0;
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    const 4 = 4;
-    const 5 = 5;
-    const 6 = 6;
-    const 7 = 7;
-    const MINUS_1 = -1;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::0
-            self::1
-            self::2
-            self::3
-            self::4
-            self::5
-            self::6
-            self::7
-            self::MINUS_1
-        ];
-    }
+    case RemapRule = 0;
+    case ExternalId = 1;
+    case ExactName = 2;
+    case ComicVineNaming = 3;
+    case ArticleStripped = 4;
+    case ReprintStripped = 5;
+    case AlternateSeries = 6;
+    case UserDecision = 7;
+    case Unmatched = -1;
 }

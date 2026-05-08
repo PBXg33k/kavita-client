@@ -2,7 +2,7 @@
 /**
  * SeriesFilterField
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * SeriesFilterField Class Doc Comment
@@ -38,86 +37,40 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SeriesFilterField
+enum SeriesFilterField: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 0 = 0;
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    const 4 = 4;
-    const 5 = 5;
-    const 6 = 6;
-    const 7 = 7;
-    const 8 = 8;
-    const 9 = 9;
-    const 10 = 10;
-    const 11 = 11;
-    const 12 = 12;
-    const 13 = 13;
-    const 14 = 14;
-    const 15 = 15;
-    const 16 = 16;
-    const 17 = 17;
-    const 18 = 18;
-    const 19 = 19;
-    const 20 = 20;
-    const 21 = 21;
-    const 22 = 22;
-    const 23 = 23;
-    const 24 = 24;
-    const 25 = 25;
-    const 26 = 26;
-    const 27 = 27;
-    const 28 = 28;
-    const 29 = 29;
-    const 30 = 30;
-    const 31 = 31;
-    const 32 = 32;
-    const 33 = 33;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::0
-            self::1
-            self::2
-            self::3
-            self::4
-            self::5
-            self::6
-            self::7
-            self::8
-            self::9
-            self::10
-            self::11
-            self::12
-            self::13
-            self::14
-            self::15
-            self::16
-            self::17
-            self::18
-            self::19
-            self::20
-            self::21
-            self::22
-            self::23
-            self::24
-            self::25
-            self::26
-            self::27
-            self::28
-            self::29
-            self::30
-            self::31
-            self::32
-            self::33
-        ];
-    }
+    case Summary = 0;
+    case SeriesName = 1;
+    case PublicationStatus = 2;
+    case Languages = 3;
+    case AgeRating = 4;
+    case UserRating = 5;
+    case Tags = 6;
+    case CollectionTags = 7;
+    case Translators = 8;
+    case Characters = 9;
+    case Publisher = 10;
+    case Editor = 11;
+    case CoverArtist = 12;
+    case Letterer = 13;
+    case Colorist = 14;
+    case Inker = 15;
+    case Penciller = 16;
+    case Writers = 17;
+    case Genres = 18;
+    case Libraries = 19;
+    case ReadProgress = 20;
+    case Formats = 21;
+    case ReleaseYear = 22;
+    case ReadTime = 23;
+    case Path = 24;
+    case FilePath = 25;
+    case WantToRead = 26;
+    case ReadingDate = 27;
+    case AverageRating = 28;
+    case Imprint = 29;
+    case Team = 30;
+    case Location = 31;
+    case ReadLast = 32;
+    case FileSize = 33;
 }

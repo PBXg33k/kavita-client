@@ -2,7 +2,7 @@
 /**
  * SeriesSortField
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * SeriesSortField Class Doc Comment
@@ -38,40 +37,17 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SeriesSortField
+enum SeriesSortField: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    const 4 = 4;
-    const 5 = 5;
-    const 6 = 6;
-    const 7 = 7;
-    const 8 = 8;
-    const 9 = 9;
-    const 10 = 10;
-    const 11 = 11;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::1
-            self::2
-            self::3
-            self::4
-            self::5
-            self::6
-            self::7
-            self::8
-            self::9
-            self::10
-            self::11
-        ];
-    }
+    case SortName = 1;
+    case CreatedDate = 2;
+    case LastModifiedDate = 3;
+    case LastChapterAdded = 4;
+    case TimeToRead = 5;
+    case ReleaseYear = 6;
+    case ReadProgress = 7;
+    case AverageRating = 8;
+    case Random = 9;
+    case UserRating = 10;
+    case UnreadChapterCount = 11;
 }
