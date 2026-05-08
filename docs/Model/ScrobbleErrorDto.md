@@ -1,0 +1,13 @@
+# ScrobbleErrorDto
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**comment** | **string** |  | [optional] 
+**details** | **string** |  | [optional] 
+**series_id** | **int** |  | [optional] 
+**library_id** | **int** |  | [optional] 
+**created** | [**\DateTime**](\DateTime.md) |  | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

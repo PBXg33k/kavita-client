@@ -1,0 +1,46 @@
+# SeriesDto
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
+**name** | **string** |  | [optional] 
+**original_name** | **string** |  | [optional] 
+**localized_name** | **string** |  | [optional] 
+**sort_name** | **string** |  | [optional] 
+**pages** | **int** |  | [optional] 
+**cover_image_locked** | **bool** |  | [optional] 
+**last_chapter_added** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**last_chapter_added_utc** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**user_rating** | **float** |  | [optional] 
+**has_user_rated** | **bool** |  | [optional] 
+**total_reads** | **int** |  | [optional] 
+**pages_read** | **int** |  | [optional] 
+**latest_read_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**format** | [**\Pbxg33k\KavitaClient\Model\MangaFormat**](MangaFormat.md) |  | [optional] 
+**created** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**sort_name_locked** | **bool** |  | [optional] 
+**localized_name_locked** | **bool** |  | [optional] 
+**word_count** | **int** |  | [optional] 
+**library_id** | **int** |  | [optional] 
+**library_name** | **string** |  | [optional] 
+**min_hours_to_read** | **int** |  | [optional] 
+**max_hours_to_read** | **int** |  | [optional] 
+**avg_hours_to_read** | **float** |  | [optional] 
+**folder_path** | **string** |  | [optional] 
+**lowest_folder_path** | **string** |  | [optional] 
+**last_folder_scanned** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**dont_match** | **bool** |  | [optional] 
+**is_blacklisted** | **bool** |  | [optional] 
+**cover_image** | **string** |  | [optional] 
+**primary_color** | **string** |  | [optional] 
+**secondary_color** | **string** |  | [optional] 
+**ani_list_id** | **int** |  | [optional] 
+**mal_id** | **int** |  | [optional] 
+**hardcover_id** | **int** |  | [optional] 
+**metron_id** | **int** |  | [optional] 
+**comic_vine_id** | **string** |  | [optional] 
+**manga_baka_id** | **int** |  | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+
