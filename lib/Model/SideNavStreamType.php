@@ -2,7 +2,7 @@
 /**
  * SideNavStreamType
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * SideNavStreamType Class Doc Comment
@@ -38,36 +37,15 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SideNavStreamType
+enum SideNavStreamType: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    const 4 = 4;
-    const 5 = 5;
-    const 6 = 6;
-    const 7 = 7;
-    const 8 = 8;
-    const 9 = 9;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::1
-            self::2
-            self::3
-            self::4
-            self::5
-            self::6
-            self::7
-            self::8
-            self::9
-        ];
-    }
+    case Collections = 1;
+    case ReadingLists = 2;
+    case Bookmarks = 3;
+    case Library = 4;
+    case SmartFilter = 5;
+    case ExternalSource = 6;
+    case AllSeries = 7;
+    case WantToRead = 8;
+    case BrowsePeople = 9;
 }

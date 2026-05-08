@@ -2,7 +2,7 @@
 /**
  * LayoutMode
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * LayoutMode Class Doc Comment
@@ -38,24 +37,9 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LayoutMode
+enum LayoutMode: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::1
-            self::2
-            self::3
-        ];
-    }
+    case Single = 1;
+    case Double = 2;
+    case DoubleReversed = 3;
 }

@@ -2,7 +2,7 @@
 /**
  * ObjectSerializer
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -51,6 +51,10 @@ class ObjectSerializer
     {
         if (is_scalar($data) || null === $data) {
             return $data;
+        } elseif ($data instanceof \BackedEnum) {
+            return $data->value;
+        } elseif ($data instanceof \UnitEnum) {
+            return $data->name;
         } elseif ($data instanceof \DateTime) {
             return ($format === 'date') ? $data->format('Y-m-d') : $data->format(\DateTime::ATOM);
         } elseif (is_array($data)) {
@@ -129,7 +133,7 @@ class ObjectSerializer
     public static function toQueryValue($object)
     {
         if (is_array($object)) {
-            return implode(',', $object);
+            return implode(',', array_map([self::class, 'toString'], $object));
         } else {
             return self::toString($object);
         }
@@ -180,6 +184,10 @@ class ObjectSerializer
     {
         if ($value instanceof \DateTime) { // datetime in ISO8601 format
             return $value->format(\DateTime::ATOM);
+        } elseif ($value instanceof \BackedEnum) {
+            return (string)$value->value;
+        } elseif ($value instanceof \UnitEnum) {
+            return $value->name;
         } else {
             return $value;
         }
@@ -287,6 +295,32 @@ class ObjectSerializer
             fclose($file);
 
             return new \SplFileObject($filename, 'r');
+        } elseif (enum_exists(ltrim($class, '\\'))) {
+            $enumClass = ltrim($class, '\\');
+
+            if (is_subclass_of($enumClass, \BackedEnum::class)) {
+                try {
+                    return $enumClass::from($data);
+                } catch (\ValueError $e) {
+                    $allowed = array_map(static function ($case) {
+                        return $case->value;
+                    }, $enumClass::cases());
+                    $imploded = implode("', '", $allowed);
+                    throw new \InvalidArgumentException("Invalid value for enum '$enumClass', must be one of: '$imploded'", 0, $e);
+                }
+            }
+
+            foreach ($enumClass::cases() as $case) {
+                if ($case->name === (string)$data) {
+                    return $case;
+                }
+            }
+
+            $allowed = array_map(static function ($case) {
+                return $case->name;
+            }, $enumClass::cases());
+            $imploded = implode("', '", $allowed);
+            throw new \InvalidArgumentException("Invalid value for enum '$enumClass', must be one of: '$imploded'");
         } elseif (method_exists($class, 'getAllowableEnumValues')) {
             if (!in_array($data, $class::getAllowableEnumValues(), true)) {
                 $imploded = implode("', '", $class::getAllowableEnumValues());

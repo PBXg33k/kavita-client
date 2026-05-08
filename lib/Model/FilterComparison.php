@@ -2,7 +2,7 @@
 /**
  * FilterComparison
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * FilterComparison Class Doc Comment
@@ -38,54 +37,24 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class FilterComparison
+enum FilterComparison: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 0 = 0;
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    const 4 = 4;
-    const 5 = 5;
-    const 6 = 6;
-    const 7 = 7;
-    const 8 = 8;
-    const 9 = 9;
-    const 10 = 10;
-    const 11 = 11;
-    const 12 = 12;
-    const 13 = 13;
-    const 14 = 14;
-    const 15 = 15;
-    const 16 = 16;
-    const 17 = 17;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::0
-            self::1
-            self::2
-            self::3
-            self::4
-            self::5
-            self::6
-            self::7
-            self::8
-            self::9
-            self::10
-            self::11
-            self::12
-            self::13
-            self::14
-            self::15
-            self::16
-            self::17
-        ];
-    }
+    case Equal = 0;
+    case GreaterThan = 1;
+    case GreaterThanEqual = 2;
+    case LessThan = 3;
+    case LessThanEqual = 4;
+    case Contains = 5;
+    case MustContains = 6;
+    case Matches = 7;
+    case NotContains = 8;
+    case NotEqual = 9;
+    case BeginsWith = 10;
+    case EndsWith = 11;
+    case IsBefore = 12;
+    case IsAfter = 13;
+    case IsInLast = 14;
+    case IsNotInLast = 15;
+    case IsEmpty = 16;
+    case IsNotEmpty = 17;
 }

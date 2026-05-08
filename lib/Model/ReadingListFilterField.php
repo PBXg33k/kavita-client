@@ -2,7 +2,7 @@
 /**
  * ReadingListFilterField
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * ReadingListFilterField Class Doc Comment
@@ -38,34 +37,14 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReadingListFilterField
+enum ReadingListFilterField: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    const 4 = 4;
-    const 5 = 5;
-    const 6 = 6;
-    const 7 = 7;
-    const 8 = 8;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::1
-            self::2
-            self::3
-            self::4
-            self::5
-            self::6
-            self::7
-            self::8
-        ];
-    }
+    case Title = 1;
+    case ReleaseYear = 2;
+    case ItemCount = 3;
+    case Tags = 4;
+    case Writer = 5;
+    case Artist = 6;
+    case Provider = 7;
+    case MissingItemCount = 8;
 }

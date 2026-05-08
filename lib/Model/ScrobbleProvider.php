@@ -2,7 +2,7 @@
 /**
  * ScrobbleProvider
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * ScrobbleProvider Class Doc Comment
@@ -38,28 +37,11 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ScrobbleProvider
+enum ScrobbleProvider: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 0 = 0;
-    const 1 = 1;
-    const 2 = 2;
-    const 4 = 4;
-    const 5 = 5;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::0
-            self::1
-            self::2
-            self::4
-            self::5
-        ];
-    }
+    case Kavita = 0;
+    case AniList = 1;
+    case Mal = 2;
+    case Cbr = 4;
+    case Hardcover = 5;
 }

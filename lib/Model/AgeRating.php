@@ -2,7 +2,7 @@
 /**
  * AgeRating
  *
- * PHP version 5
+ * PHP version 8.5+
  *
  * @category Class
  * @package  Pbxg33k\KavitaClient
@@ -27,7 +27,6 @@
  */
 
 namespace Pbxg33k\KavitaClient\Model;
-use \Pbxg33k\KavitaClient\ObjectSerializer;
 
 /**
  * AgeRating Class Doc Comment
@@ -38,50 +37,22 @@ use \Pbxg33k\KavitaClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AgeRating
+enum AgeRating: int
 {
-    /**
-     * Possible values of this enum
-     */
-    const 0 = 0;
-    const 1 = 1;
-    const 2 = 2;
-    const 3 = 3;
-    const 4 = 4;
-    const 5 = 5;
-    const 6 = 6;
-    const 7 = 7;
-    const 8 = 8;
-    const 9 = 9;
-    const 10 = 10;
-    const 11 = 11;
-    const 12 = 12;
-    const 13 = 13;
-    const 14 = 14;
-    const MINUS_1 = -1;
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
-    {
-        return [
-            self::0
-            self::1
-            self::2
-            self::3
-            self::4
-            self::5
-            self::6
-            self::7
-            self::8
-            self::9
-            self::10
-            self::11
-            self::12
-            self::13
-            self::14
-            self::MINUS_1
-        ];
-    }
+    case Unknown = 0;
+    case RatingPending = 1;
+    case EarlyChildhood = 2;
+    case Everyone = 3;
+    case G = 4;
+    case Everyone10Plus = 5;
+    case PG = 6;
+    case KidsToAdults = 7;
+    case Teen = 8;
+    case Mature15Plus = 9;
+    case Mature17Plus = 10;
+    case Mature = 11;
+    case R18Plus = 12;
+    case AdultsOnly = 13;
+    case X18Plus = 14;
+    case NotApplicable = -1;
 }
